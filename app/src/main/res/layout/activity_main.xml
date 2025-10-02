@@ -48,12 +48,11 @@
     <!-- Tombol -->
     <Button
         android:id="@+id/btnJoin"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/pink"
         android:padding="14dp"
         android:text="Bergabung"
-        android:textAllCaps="false"
         android:textColor="@color/ungu"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
