@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PosyanduHB</string>
+
+    <!-- Motto -->
+    <string name="motto">Sehat Ibu, Kuat Anak,\nBahagia Keluarga!</string>
+
+    <!-- Button -->
+    <string name="btn_join">Bergabung</string>
 </resources>
