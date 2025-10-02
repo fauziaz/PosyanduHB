@@ -45,7 +45,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <!-- Tombol -->
     <Button
         android:id="@+id/btnJoin"
         android:layout_width="match_parent"
