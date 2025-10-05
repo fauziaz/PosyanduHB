@@ -26,20 +26,27 @@ class HomeActivity : AppCompatActivity() {
 
         // make the whole CardView clickable (safer if user taps outside the icon)
         try {
-            binding.cardJadwalPelaksanaan.setOnClickListener {
+            binding.cardJadwalpelaksanaan.setOnClickListener {
                 startActivity(android.content.Intent(this, JadwalActivity::class.java))
             }
         } catch (e: Exception) {
             // fallback: find by id if view binding doesn't expose the card (older generated name)
-            val card = findViewById<android.view.View>(R.id.card_jadwal_pelaksanaan)
+            val card = findViewById<android.view.View>(R.id.card_jadwalpelaksanaan)
             card?.setOnClickListener {
                 startActivity(android.content.Intent(this, JadwalActivity::class.java))
             }
+        }
+        binding.cardArtikelMpasi.setOnClickListener {
+            val url = "https://www.rspondokindah.co.id/id/news/menyiapkan-asupan-pertama-untuk-si-kecil"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
         }
     }
 
     // Fungsi baru untuk menangani menu titik tiga (menu more)
     private fun setupOverflowMenu() {
+
         binding.ivMoreOptions.setOnClickListener { view ->
             // 1. Buat instance PopupMenu
             val popupMenu = PopupMenu(this, view)
