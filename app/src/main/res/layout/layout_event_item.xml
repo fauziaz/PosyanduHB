@@ -10,6 +10,7 @@
         android:id="@+id/tvNamaEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:text="Imunisasi"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -41,6 +42,7 @@
                 android:id="@+id/tvWaktu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
                 android:text="9:00 – 9:30"
                 android:textColor="@color/pink_gelap"
                 android:textSize="14sp" />
@@ -65,6 +67,7 @@
                 android:id="@+id/tvLokasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Aula Kantor Lurah"
                 android:textColor="@color/pink_gelap"
                 android:textSize="14sp" />

@@ -20,8 +20,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            style="@style/TextAppearance.Posyandu.Title"
+            android:fontFamily="@font/poppins_bold"
             android:text="Hallo,\nCeline"
+            android:textColor="#716A8D"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,6 +96,7 @@
                             android:id="@+id/tvTitle"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
                             android:layout_weight="1"
                             android:text="Jadwal Pemeriksaan"
                             android:textColor="#133C6B"
@@ -112,6 +115,7 @@
                             android:id="@+id/recyclerJadwal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_regular"
                             android:scrollbars="vertical"
                             android:clipToPadding="false"
                             android:background="@drawable/bg_abu_rounded" />
@@ -152,6 +156,7 @@
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:layout_gravity="bottom"
         android:background="@android:color/transparent"
         app:menu="@menu/bottom_nav_menu"

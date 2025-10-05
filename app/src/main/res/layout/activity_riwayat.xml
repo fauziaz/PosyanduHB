@@ -16,12 +16,14 @@
         <!-- Greeting -->
         <TextView
             android:id="@+id/tv_greeting"
-            style="@style/TextAppearance.Posyandu.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Hallo,\nCeline"
+            android:textColor="#716A8D"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,10 +85,9 @@
                         android:layout_marginEnd="8dp" />
 
                     <TextView
-                        android:id="@+id/tvJudul"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
                         android:text="Riwayat"
                         android:textColor="#133C6B"
                         android:textSize="18sp"
@@ -117,6 +118,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_bold"
                             android:text="Balita"
                             android:textColor="#3E3E3E"
                             android:textSize="16sp"
@@ -127,6 +129,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
                         android:text="Imunisasi"
                         android:textColor="#716A8D"
                         android:textStyle="bold"
@@ -137,6 +140,7 @@
                         android:id="@+id/rvImunisasi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
                         android:nestedScrollingEnabled="false"/>
 
                     <!-- Penimbangan -->
