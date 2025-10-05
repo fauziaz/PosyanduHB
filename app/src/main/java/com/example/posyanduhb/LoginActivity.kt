@@ -28,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Masukkan username dan password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            // For now, accept any non-empty credentials and go to MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            // For now, accept any non-empty credentials and go to HomeActivity
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
