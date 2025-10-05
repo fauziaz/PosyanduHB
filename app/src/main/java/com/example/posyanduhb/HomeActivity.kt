@@ -1,9 +1,9 @@
 package com.example.posyanduhb
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import com.example.posyanduhb.databinding.ActivityHomeBinding
@@ -26,20 +26,19 @@ class HomeActivity : AppCompatActivity() {
 
         // make the whole CardView clickable (safer if user taps outside the icon)
         try {
-            binding.cardJadwalpelaksanaan.setOnClickListener {
+            binding.cardJadwalpemeriksaan.setOnClickListener {
                 startActivity(android.content.Intent(this, JadwalActivity::class.java))
             }
         } catch (e: Exception) {
             // fallback: find by id if view binding doesn't expose the card (older generated name)
-            val card = findViewById<android.view.View>(R.id.card_jadwalpelaksanaan)
+            val card = findViewById<android.view.View>(R.id.card_jadwalpemeriksaan)
             card?.setOnClickListener {
                 startActivity(android.content.Intent(this, JadwalActivity::class.java))
             }
         }
         binding.cardArtikelMpasi.setOnClickListener {
             val url = "https://www.rspondokindah.co.id/id/news/menyiapkan-asupan-pertama-untuk-si-kecil"
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(url)
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
         }
     }

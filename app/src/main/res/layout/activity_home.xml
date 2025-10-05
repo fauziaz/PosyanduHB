@@ -20,8 +20,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            style="@style/TextAppearance.Posyandu.Title"
+            android:fontFamily="@font/poppins_bold"
             android:text="Hallo,\nCeline"
+            android:textColor="#716A8D"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,16 +80,14 @@
 
                     <!-- Item Jadwal Pemeriksaan -->
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/card_jadwalpelaksanaan"
+                        android:id="@+id/card_jadwalpemeriksaan"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="16dp"
                         app:cardCornerRadius="16dp"
-                        app:cardElevation="4dp"
-                        android:clickable="true"
-                        android:focusable="true">
+                        app:cardElevation="4dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -114,6 +114,7 @@
 
                     <!-- Item Reservasi Online -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_reservasionline"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -147,6 +148,7 @@
 
                     <!-- Item Profil Akun -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_profilakun"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
@@ -316,6 +318,7 @@
                     android:orientation="horizontal">
                     <!-- Artikel 1 -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_artikel_mpasi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -328,7 +331,6 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/img_artikel"
                                 android:layout_width="match_parent"
                                 android:layout_height="80dp"
                                 android:scaleType="centerCrop"
