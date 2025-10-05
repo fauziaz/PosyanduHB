@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import com.example.posyanduhb.databinding.ActivityHomeBinding
@@ -38,7 +39,8 @@ class HomeActivity : AppCompatActivity() {
         }
         binding.cardArtikelMpasi.setOnClickListener {
             val url = "https://www.rspondokindah.co.id/id/news/menyiapkan-asupan-pertama-untuk-si-kecil"
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
             startActivity(intent)
         }
     }
