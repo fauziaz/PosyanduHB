@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.posyanduhb.databinding.ActivityJadwalBinding
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,11 +17,15 @@ data class DaySchedule(val day: String, val events: List<Event>)
 
 class JadwalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityJadwalBinding
+    private lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        userPreferences = UserPreferences.getInstance(this)
+        updateUserGreeting()
 
         binding.btnBack.setOnClickListener {
             finish()
@@ -47,12 +52,17 @@ class JadwalActivity : AppCompatActivity() {
         binding.recyclerJadwal.adapter = JadwalAdapter(jadwalList)
 
         // back button support: finish this activity when back icon is clicked
-        try {
-            binding.btnBack.setOnClickListener { finish() }
-        } catch (e: Exception) {
-            val back = findViewById<android.view.View>(R.id.btnBack)
-            back?.setOnClickListener { finish() }
-        }
+        setupBottomNavigation(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateUserGreeting()
+    }
+
+    private fun updateUserGreeting() {
+        val username = userPreferences.getUsername()
+        binding.tvGreeting.text = "Hallo,\n$username"
     }
 }
 

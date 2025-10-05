@@ -18,8 +18,11 @@ class ReservasiBerhasilActivity : AppCompatActivity() {
         }
 
         btnBeranda.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
+            finish() // close this activity to prevent going back here with back button
         }
+        // wire bottom nav/fab (if bottom navigation exists in this layout)
+        setupBottomNavigation(this)
     }
 }

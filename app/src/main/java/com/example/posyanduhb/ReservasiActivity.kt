@@ -67,8 +67,15 @@ class ReservasiActivity : AppCompatActivity() {
                 intent.putExtra("tanggal", tanggal)
                 intent.putExtra("jam", jam)
                 intent.putExtra("nomorAntrian", nomorAntrian)
-                startActivity(intent)
+                try {
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    android.util.Log.e("ReservasiActivity", "Gagal membuka ReservasiBerhasilActivity: ${e.message}", e)
+                    Toast.makeText(this, "Tidak dapat membuka halaman konfirmasi reservasi", Toast.LENGTH_SHORT).show()
+                }
             }
         }
+        // wire bottom nav/fab
+        setupBottomNavigation(this)
     }
 }

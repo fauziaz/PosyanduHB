@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.posyanduhb.databinding.ActivityRiwayatBinding
+import com.example.posyanduhb.databinding.ActivityRiwayatBinding
 
 // Model Riwayat
 data class Riwayat(
@@ -43,10 +45,16 @@ class RiwayatAdapter(private val list: List<Riwayat>) :
 
 // Activity
 class RiwayatActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRiwayatBinding
+    private lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_riwayat) // pastikan namanya activity_riwayat.xml
+        binding = ActivityRiwayatBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        userPreferences = UserPreferences.getInstance(this)
+        updateUserGreeting()
 
         // Tombol Back
         findViewById<android.widget.ImageView>(R.id.btnBack).setOnClickListener {
@@ -87,5 +95,32 @@ class RiwayatActivity : AppCompatActivity() {
         val rvPengukuran = findViewById<RecyclerView>(R.id.rvPengukuran)
         rvPengukuran.layoutManager = LinearLayoutManager(this)
         rvPengukuran.adapter = RiwayatAdapter(pengukuranData)
+
+        setupBottomNavigation(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateUserGreeting()
+    }
+
+    private fun updateUserGreeting() {
+        val username = userPreferences.getUsername()
+        binding.tvGreeting.text = "Hallo,\n$username"
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateUserGreeting()
+    }
+
+    private fun updateUserGreeting() {
+        val username = userPreferences.getUsername()
+        binding.tvGreeting.text = "Hallo,\n$username"
+    }
+        rvPengukuran.layoutManager = LinearLayoutManager(this)
+        rvPengukuran.adapter = RiwayatAdapter(pengukuranData)
+        // wire bottom nav/fab if present in layout
+        setupBottomNavigation(this)
     }
 }
