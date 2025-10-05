@@ -1,5 +1,6 @@
 package com.example.posyanduhb
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -38,18 +39,21 @@ class HomeActivity : AppCompatActivity() {
             popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
                 when (menuItem.itemId) {
                     R.id.menu_bantuan -> {
-                        // Aksi saat item "Bantuan" diklik
-                        Toast.makeText(this, "Bantuan diklik", Toast.LENGTH_SHORT).show()
+                        // Membuat Intent untuk membuka BantuanActivity
+                        val intent = Intent(this, BantuanActivity::class.java)
+                        startActivity(intent)
                         true
                     }
                     R.id.menu_hubungi_kami -> {
                         // Aksi saat item "Hubungi Kami" diklik
-                        Toast.makeText(this, "Hubungi Kami diklik", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, JadwalActivity::class.java)
+                        startActivity(intent)
                         true
                     }
                     R.id.menu_logout -> {
                         // Aksi saat item "Logout" diklik
-                        Toast.makeText(this, "Logout diklik", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
                         true
                     }
                     else -> false
