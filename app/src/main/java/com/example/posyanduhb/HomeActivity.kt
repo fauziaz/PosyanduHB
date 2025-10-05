@@ -18,6 +18,11 @@ class HomeActivity : AppCompatActivity() {
 
         // Panggil fungsi untuk menyiapkan menu saat activity dibuat
         setupOverflowMenu()
+
+        // buka JadwalActivity ketika kartu/jadwal diketuk
+        binding.imgJadwalPelaksanaan.setOnClickListener {
+            startActivity(android.content.Intent(this, JadwalActivity::class.java))
+        }
     }
 
     // Fungsi baru untuk menangani menu titik tiga (menu more)

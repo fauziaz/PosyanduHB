@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Imunisasi"
         android:textStyle="bold"
-        android:textSize="15sp"
-        android:textColor="#000" />
+        android:textSize="18sp"
+        android:textColor="@color/ungu" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,41 +21,55 @@
         android:paddingTop="4dp"
         android:gravity="center_vertical">
 
-        <!-- Ikon Jam -->
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/ic_jam"
-            android:tint="#A30855"
-            android:layout_marginEnd="4dp" />
-
-        <TextView
-            android:id="@+id/tvWaktu"
+        <!-- Chip waktu -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="9:00 – 9:30"
-            android:textColor="#A30855"
-            android:textSize="13sp" />
+            android:orientation="horizontal"
+            android:background="@drawable/bg_chip_pink"
+            android:gravity="center_vertical"
+            android:layout_marginEnd="8dp">
 
-        <!-- Spacer kecil -->
-        <Space
-            android:layout_width="12dp"
-            android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_jam"
+                android:tint="@color/pink_gelap"
+                android:layout_marginEnd="4dp" />
 
-        <!-- Ikon Lokasi -->
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/ic_lokasi"
-            android:tint="#A30855"
-            android:layout_marginEnd="4dp" />
+            <TextView
+                android:id="@+id/tvWaktu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00 – 9:30"
+                android:textColor="@color/pink_gelap"
+                android:textSize="14sp" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvLokasi"
+        <!-- Chip lokasi -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zoom"
-            android:textColor="#A30855"
-            android:textSize="13sp" />
+            android:orientation="horizontal"
+            android:background="@drawable/bg_chip_pink"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_lokasi"
+                android:tint="@color/pink_gelap"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:id="@+id/tvLokasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aula Kantor Lurah"
+                android:textColor="@color/pink_gelap"
+                android:textSize="14sp" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </LinearLayout>

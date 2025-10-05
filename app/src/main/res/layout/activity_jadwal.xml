@@ -1,28 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F9F9F9"
-    tools:context=".JadwalActivity">
+    android:background="#F0D8E4"
+    tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/tvTitle"
+    <!-- Konten utama (header dan scroll view) dibungkus dalam SATU ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Bagian Header Atas -->
+        <TextView
+            android:id="@+id/tv_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            style="@style/TextAppearance.Posyandu.Title"
+            android:text="Hallo,\nCeline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ic_posyandu"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_posyandu"
+            app:layout_constraintBottom_toBottomOf="@id/tv_greeting"
+            app:layout_constraintEnd_toStartOf="@id/iv_more_options"
+            app:layout_constraintTop_toTopOf="@id/tv_greeting" />
+
+        <ImageView
+            android:id="@+id/iv_more_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_menu_more"
+            app:layout_constraintBottom_toBottomOf="@id/ic_posyandu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ic_posyandu"
+            app:tint="#5C5C5C" />
+
+        <!-- Konten Utama yang bisa di-scroll -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_white_rounded_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_greeting"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp">
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#F9F9F9"
+                tools:context=".JadwalActivity">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Schedule"
+                    android:textColor="#133C6B"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="16dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerJadwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- BottomAppBar -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mobile Schedule"
-        android:textColor="#133C6B"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp" />
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/white"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:fabCradleVerticalOffset="10dp"
+        app:hideOnScroll="true" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerJadwal"
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_beranda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#716A8D"
+        android:src="@drawable/ic_beranda"
+        app:layout_anchor="@id/bottom_app_bar"
+        app:maxImageSize="30dp"
+        app:tint="@android:color/white" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"
-        android:scrollbars="vertical" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="labeled" />
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
