@@ -53,10 +53,10 @@
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_white_rounded_top"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_greeting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:clipToPadding="false"
             android:paddingBottom="80dp">
 
@@ -68,44 +68,56 @@
                 android:paddingEnd="24dp"
                 android:paddingTop="24dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="#F9F9F9">
-
+                <!-- Bagian Jadwal -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:id="@+id/btnBack"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:src="@drawable/ic_back"
-                        android:contentDescription="Back"
-                        android:layout_marginEnd="8dp" />
-
-                    <TextView
-                        android:id="@+id/tvTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jadwal Pemeriksaan"
-                        android:textColor="#133C6B"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerJadwal"
-                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="8dp"
-                    android:scrollbars="vertical" />
-            </LinearLayout>
+                    android:orientation="vertical">
+
+                    <!-- HEADER -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="12dp">
+
+                        <ImageView
+                            android:id="@+id/btnBack"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_back"
+                            android:contentDescription="Back"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Jadwal Pemeriksaan"
+                            android:textColor="#133C6B"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- LIST CONTAINER -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"> <!-- padding biar rounded terlihat -->
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerJadwal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scrollbars="vertical"
+                            android:clipToPadding="false"
+                            android:background="@drawable/bg_abu_rounded" />
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
