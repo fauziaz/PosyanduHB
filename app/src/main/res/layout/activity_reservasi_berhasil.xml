@@ -1,242 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F5F5F5"
     tools:context=".ReservasiBerhasilActivity">
 
-    <!-- HEADER -->
+    <!-- KONTEN UTAMA -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="20dp"
-        android:background="#F0D8E4"
-        android:gravity="center_vertical">
-
-        <!-- Nama pengguna -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hallo"
-                android:textColor="#6B6B6B"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Celine"
-                android:textColor="#2F2F2F"
-                android:textStyle="bold"
-                android:textSize="22sp" />
-        </LinearLayout>
-
-        <!-- Logo -->
-        <ImageView
-            android:layout_width="90dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_posyandu"
-            android:contentDescription="Logo Posyandu" />
-    </LinearLayout>
-
-    <!-- KONTEN -->
-    <ScrollView
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:orientation="vertical"
+        android:background="#F5F5F5">
 
+        <!-- HEADER -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:layout_height="140dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:background="#F0D8E4"
+            android:gravity="center_vertical">
 
-            <!-- Judul -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Nama pengguna -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Reservasi Berhasil"
-                android:textColor="#3A2D2D"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="6dp" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Berikut detail konfirmasi reservasi anda"
-                android:textColor="#666666"
-                android:textSize="14sp"
-                android:layout_marginBottom="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hallo"
+                    android:textColor="#6B6B6B"
+                    android:textSize="14sp" />
 
-            <!-- CARD DETAIL -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Celine"
+                    android:textColor="#2F2F2F"
+                    android:textStyle="bold"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <!-- Logo -->
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_posyandu"
+                android:contentDescription="Logo Posyandu" />
+        </LinearLayout>
+
+        <!-- KONTEN -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="20dp"
+            android:paddingBottom="80dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/bg_detail_card"
-                android:elevation="5dp"
-                android:padding="16dp"
-                android:layout_marginBottom="24dp">
+                android:gravity="center_horizontal">
 
-                <!-- No. Antrian -->
+                <!-- Judul -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reservasi Berhasil"
+                    android:textColor="#3A2D2D"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berikut detail konfirmasi reservasi anda"
+                    android:textColor="#666666"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- CARD DETAIL -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_detail_card"
+                    android:elevation="5dp"
+                    android:padding="16dp"
+                    android:layout_marginBottom="24dp">
 
-                    <TextView
-                        android:layout_width="0dp"
+                    <!-- No. Antrian -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="No. Antrian"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="8dp" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="No. Antrian"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
 
-                    <TextView
-                        android:layout_width="0dp"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="A12"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Nama Balita -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="A12"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Nama Balita"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="France"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Layanan -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Layanan"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Imunisasi Balita"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!-- Tanggal & Jam -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Tanggal dan Jam"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=":"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Senin, 15 Oktober\n08.00 - 09.00"
+                            android:textColor="#4A3F4E"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
-                <!-- Nama Balita -->
-                <LinearLayout
+                <!-- Tombol Kembali -->
+                <Button
+                    android:id="@+id/btnKembali"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
+                    android:layout_height="50dp"
+                    android:text="Kembali"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#B89DB6"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_button_primary" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Nama Balita"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="8dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="France"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <!-- Layanan -->
-                <LinearLayout
+                <!-- Tombol Beranda -->
+                <Button
+                    android:id="@+id/btnBeranda"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Layanan"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="8dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="Imunisasi Balita"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <!-- Tanggal & Jam -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Tanggal dan Jam"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="8dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="Senin, 15 Oktober\n08.00 - 09.00"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
+                    android:layout_height="50dp"
+                    android:text="Beranda"
+                    android:textColor="#B89DB6"
+                    android:background="@drawable/bg_button_outline"
+                    android:layout_marginBottom="16dp" />
             </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
-            <!-- Tombol Kembali -->
-            <Button
-                android:id="@+id/btnKembali"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Kembali"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:backgroundTint="#B89DB6"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_button_primary" />
+    <!-- BOTTOM NAVIGATION BAR -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/white"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:fabCradleVerticalOffset="10dp"
+        app:hideOnScroll="true" />
 
-            <!-- Tombol Beranda -->
-            <Button
-                android:id="@+id/btnBeranda"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Beranda"
-                android:textColor="#B89DB6"
-                android:background="@drawable/bg_button_outline" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    <!-- FLOATING ACTION BUTTON -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_beranda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#716A8D"
+        android:src="@drawable/ic_beranda"
+        app:layout_anchor="@id/bottom_app_bar"
+        app:maxImageSize="30dp"
+        app:tint="@android:color/white" />
+
+    <!-- BOTTOM NAVIGATION VIEW -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="labeled" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
