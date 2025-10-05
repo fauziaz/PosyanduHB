@@ -78,13 +78,16 @@
 
                     <!-- Item Jadwal Pemeriksaan -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_jadwal_pelaksanaan"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_columnWeight="1"
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="16dp"
                         app:cardCornerRadius="16dp"
-                        app:cardElevation="4dp">
+                        app:cardElevation="4dp"
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <LinearLayout
                             android:layout_width="match_parent"

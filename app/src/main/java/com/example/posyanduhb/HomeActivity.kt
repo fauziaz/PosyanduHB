@@ -24,6 +24,19 @@ class HomeActivity : AppCompatActivity() {
         binding.imgJadwalPelaksanaan.setOnClickListener {
             startActivity(android.content.Intent(this, JadwalActivity::class.java))
         }
+
+        // make the whole CardView clickable (safer if user taps outside the icon)
+        try {
+            binding.cardJadwalPelaksanaan.setOnClickListener {
+                startActivity(android.content.Intent(this, JadwalActivity::class.java))
+            }
+        } catch (e: Exception) {
+            // fallback: find by id if view binding doesn't expose the card (older generated name)
+            val card = findViewById<android.view.View>(R.id.card_jadwal_pelaksanaan)
+            card?.setOnClickListener {
+                startActivity(android.content.Intent(this, JadwalActivity::class.java))
+            }
+        }
     }
 
     // Fungsi baru untuk menangani menu titik tiga (menu more)
