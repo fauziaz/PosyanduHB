@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_white_rounded_corner"
+    android:padding="12dp"
+    android:layout_marginTop="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/icon_riwayat"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_suntikan"
+        android:layout_gravity="center_vertical" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_judul_riwayat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Judul Riwayat"
+            android:textStyle="bold"
+            android:textColor="#4C3A4C"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_subjudul_riwayat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Tanggal"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_keterangan_kanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Dosis 1"
+        android:textColor="#6C5A6B"
+        android:textSize="12sp"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>
