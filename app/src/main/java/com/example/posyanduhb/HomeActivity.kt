@@ -17,10 +17,9 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Panggil fungsi untuk menyiapkan menu saat activity dibuat
         setupOverflowMenu()
 
-        // buka JadwalActivity ketika kartu/jadwal diketuk
+        // buka JadwalActivity ketika kartu/jadwal dikeme
         binding.imgJadwalPelaksanaan.setOnClickListener {
             startActivity(android.content.Intent(this, JadwalActivity::class.java))
         }
