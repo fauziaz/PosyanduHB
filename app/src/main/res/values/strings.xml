@@ -1,9 +1,22 @@
 <resources>
     <string name="app_name">PosyanduHB</string>
 
-    <!-- Motto -->
     <string name="motto">Sehat Ibu, Kuat Anak,\nBahagia Keluarga!</string>
 
-    <!-- Button -->
     <string name="btn_join">Bergabung</string>
+
+    <string name="welcome_back">Halo, Selamat Datang Kembali!</string>
+
+    <string name="username">Nama Pengguna</string>
+
+    <string name="username_example">Contoh: anna susanto</string>
+
+    <string name="password">Password</string>
+
+    <string name="no_account">Belum memiliki akun?</string>
+
+    <string name="login">Login</string>
+
+    <string name="app_logo">Logo Aplikasi</string>
+
 </resources>

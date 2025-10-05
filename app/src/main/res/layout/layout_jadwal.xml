@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:padding="8dp">
+
+    <!-- Day Header -->
+    <TextView
+        android:id="@+id/tvHariTanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monday, October 7"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#133C6B"
+        android:padding="4dp" />
+
+    <!-- Event Cards Container -->
+    <LinearLayout
+        android:id="@+id/containerEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="8dp" />
+
+</LinearLayout>
