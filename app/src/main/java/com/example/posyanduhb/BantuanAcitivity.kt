@@ -54,11 +54,22 @@ class BantuanActivity : AppCompatActivity() {
             openJawabanActivity(pertanyaan, jawaban)
         }
 
-        // Tambahkan listener untuk pertanyaan lain dengan cara yang sama
-        // Pastikan ID CardView-nya sesuai
+
         binding.cardPertanyaan4.setOnClickListener {
             val pertanyaan = "Dimana bisa melihat hasil reservasi online yang sudah berhasil?"
             val jawaban = "Setelah reservasi berhasil, Anda akan mendapatkan nomor antrian. Anda juga dapat melihat riwayat reservasi Anda di halaman 'Profil Akun' pada bagian 'Riwayat Reservasi'."
+            openJawabanActivity(pertanyaan, jawaban)
+        }
+
+        binding.cardPertanyaan5.setOnClickListener {
+            val pertanyaan = "Bagaimana cara membatalkan reservasi jika ada kesalahan saat memilih menu?"
+            val jawaban = "Saat ini, fitur pembatalan reservasi melalui aplikasi belum tersedia. Untuk melakukan pembatalan, silakan hubungi kader Posyandu melalui kontak yang tersedia di menu 'Hubungi Kami' pada halaman utama."
+            openJawabanActivity(pertanyaan, jawaban)
+        }
+
+        binding.cardPertanyaan6.setOnClickListener {
+            val pertanyaan = "Apakah ada tambahan informasi terkait efek samping imunisasi?"
+            val jawaban = "Informasi umum mengenai imunisasi dan kemungkinan efek sampingnya tersedia pada menu 'Artikel & Edukasi Kesehatan' di halaman Beranda. Untuk konsultasi lebih lanjut mengenai kondisi spesifik balita Anda pasca-imunisasi, disarankan untuk menghubungi tenaga kesehatan atau dokter."
             openJawabanActivity(pertanyaan, jawaban)
         }
 
