@@ -1,42 +1,59 @@
 package com.example.posyanduhb
 
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import com.example.posyanduhb.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
 
-    // Mendeklarasikan variabel binding untuk mengakses komponen layout
-    // Konsep ini disebut "View Binding", yang lebih modern dan aman
-    // dibandingkan findViewById().
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Menghubungkan layout activity_home.xml dengan kelas Kotlin ini
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Di sinilah Anda akan menambahkan logika untuk tombol-tombol
-        // dan interaksi lainnya.
-        setupClickListeners()
+        // Panggil fungsi untuk menyiapkan menu saat activity dibuat
+        setupOverflowMenu()
     }
 
-    private fun setupClickListeners() {
-        // Contoh: Menambahkan aksi klik untuk tombol (CardView)
-        // Anda bisa membuat fungsi ini untuk mengelola semua Intent
-        // atau navigasi ke halaman lain.
+    // Fungsi baru untuk menangani menu titik tiga (menu more)
+    private fun setupOverflowMenu() {
+        binding.ivMoreOptions.setOnClickListener { view ->
+            // 1. Buat instance PopupMenu
+            val popupMenu = PopupMenu(this, view)
 
-        // binding.cardJadwal.setOnClickListener {
-        //     val intent = Intent(this, JadwalActivity::class.java)
-        //     startActivity(intent)
-        // }
+            // 2. Inflate (tampilkan) menu dari file XML
+            popupMenu.menuInflater.inflate(R.menu.overflow_menu, popupMenu.menu)
 
-        // binding.cardReservasi.setOnClickListener {
-        //     // Pindah ke halaman Reservasi
-        // }
+            // 3. Tambahkan listener untuk menangani klik pada setiap item menu
+            popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_bantuan -> {
+                        // Aksi saat item "Bantuan" diklik
+                        Toast.makeText(this, "Bantuan diklik", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.menu_hubungi_kami -> {
+                        // Aksi saat item "Hubungi Kami" diklik
+                        Toast.makeText(this, "Hubungi Kami diklik", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    R.id.menu_logout -> {
+                        // Aksi saat item "Logout" diklik
+                        Toast.makeText(this, "Logout diklik", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else -> false
+                }
+            }
 
-        // dan seterusnya untuk komponen interaktif lainnya.
+            // 4. Tampilkan PopupMenu
+            popupMenu.show()
+        }
     }
 }
+
