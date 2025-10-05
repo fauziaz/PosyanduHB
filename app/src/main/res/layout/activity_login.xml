@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:orientation="horizontal"
-            android:background="@drawable/bg_input"
+            android:background="@drawable/bg_input_box"
             android:padding="8dp"
             android:layout_marginTop="6dp">
 
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:orientation="horizontal"
-            android:background="@drawable/bg_input"
+            android:background="@drawable/bg_input_box"
             android:padding="8dp"
             android:layout_marginTop="6dp">
 
