@@ -62,16 +62,16 @@ class RiwayatActivity : AppCompatActivity() {
 
         // Data dummy Penimbangan
         val penimbanganData = listOf(
-            Riwayat("8 kg", "12 Maret 2025", "+ 0.2 kg", R.drawable.ic_timbangan),
-            Riwayat("7.8 kg", "2 Februari 2025", "+ 0.6 kg", R.drawable.ic_timbangan),
-            Riwayat("7.2 kg", "10 Januari 2025", "sehat", R.drawable.ic_timbangan)
+            Riwayat("8kg", "12 Maret 2025", "+ 0.2kg", R.drawable.ic_timbangan),
+            Riwayat("7.8kg", "2 Februari 2025", "+ 0.6kg", R.drawable.ic_timbangan),
+            Riwayat("7.2kg", "10 Januari 2025", "sehat", R.drawable.ic_timbangan)
         )
 
         // Data dummy Pengukuran
         val pengukuranData = listOf(
-            Riwayat("68 cm", "12 Maret 2025", "70 cm", R.drawable.ic_penggaris),
-            Riwayat("66 cm", "2 Februari 2025", "75 cm", R.drawable.ic_penggaris),
-            Riwayat("60 cm", "10 Januari 2025", "75 cm", R.drawable.ic_penggaris)
+            Riwayat("68cm", "12 Maret 2025", "+ 2cm", R.drawable.ic_penggaris),
+            Riwayat("66cm", "2 Februari 2025", "+ 6cm", R.drawable.ic_penggaris),
+            Riwayat("60cm", "10 Januari 2025", "sehat", R.drawable.ic_penggaris)
 
         )
 
