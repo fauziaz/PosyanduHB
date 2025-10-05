@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/posyandu"
+            android:contentDescription="Logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mari Bergabung Dengan\nKami"
+            android:textColor="@color/ungu"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="18dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Pengguna"
+            android:textColor="@color/ungu"
+            android:layout_marginTop="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_input"
+            android:padding="8dp"
+            android:layout_marginTop="6dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_person"
+                android:tint="@color/ungu"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/etRegUsername"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Contoh: anna susanto"
+                android:paddingStart="8dp"
+                android:textColor="@color/ungu"
+                android:textColorHint="@color/ungu"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail"
+            android:textColor="@color/ungu"
+            android:layout_marginTop="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_input"
+            android:padding="8dp"
+            android:layout_marginTop="6dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_email"
+                android:tint="@color/ungu"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/etRegEmail"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Contoh: fina82@gmail.com"
+                android:paddingStart="8dp"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/ungu"
+                android:textColorHint="@color/ungu"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="@color/ungu"
+            android:layout_marginTop="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_input"
+            android:padding="8dp"
+            android:layout_marginTop="6dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_lock"
+                android:tint="@color/ungu"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/etRegPassword"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="********"
+                android:paddingStart="8dp"
+                android:inputType="textPassword"
+                android:textColor="@color/ungu"
+                android:textColorHint="@color/ungu"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Lahir"
+            android:textColor="@color/ungu"
+            android:layout_marginTop="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_input"
+            android:padding="8dp"
+            android:layout_marginTop="6dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_calendar"
+                android:tint="@color/ungu"
+                android:layout_gravity="center_vertical"/>
+            <EditText
+                android:id="@+id/etRegDob"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="hh/bb/tttt"
+                android:paddingStart="8dp"
+                android:focusable="false"
+                android:clickable="true"
+                android:textColor="@color/ungu"
+                android:textColorHint="@color/ungu"/>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbAgree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saya setuju dengan Kebijakan Privasi dan Ketentuan Penggunaan"
+            android:textColor="@color/ungu"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah Memiliki Akun?"
+            android:textColor="@color/ungu_dark"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:autoLink="none"/>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/pink"
+            android:text="Sign Up"
+            android:textColor="@color/ungu"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</ScrollView>
