@@ -75,6 +75,11 @@ class BantuanActivity : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        setupBottomNavigation(this)
+    }
+
     /**
      * Fungsi untuk membuka JawabanBantuanActivity dan mengirim data.
      * @param pertanyaan Teks pertanyaan yang akan dikirim.

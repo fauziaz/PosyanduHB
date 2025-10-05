@@ -10,11 +10,20 @@ import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
+    private lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        userPreferences = UserPreferences.getInstance(this)
+
+        // Load existing data
+        binding.etUsername.setText(userPreferences.getUsername())
+        binding.etEmail.setText(userPreferences.getEmail())
+        binding.tvDob.text = userPreferences.getDob()
+        binding.etPhone.setText(userPreferences.getPhone())
 
         binding.btnBack.setOnClickListener { finish() }
 
@@ -30,8 +39,19 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         binding.btnSave.setOnClickListener {
-            Toast.makeText(this, "Profile saved (mock)", Toast.LENGTH_SHORT).show()
+            // Save profile data
+            userPreferences.saveUserProfile(
+                username = binding.etUsername.text.toString(),
+                email = binding.etEmail.text.toString(),
+                dob = binding.tvDob.text.toString(),
+                phone = binding.etPhone.text.toString()
+            )
+            
+            Toast.makeText(this, "Profile berhasil disimpan", Toast.LENGTH_SHORT).show()
+            setResult(RESULT_OK)
             finish()
         }
+        // wire bottom nav/fab
+        setupBottomNavigation(this)
     }
 }

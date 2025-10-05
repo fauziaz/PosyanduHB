@@ -1,6 +1,5 @@
 package com.example.posyanduhb
 
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -19,78 +18,71 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Memanggil satu fungsi utama untuk mengatur semua listener klik
-        setupClickListeners()
-    }
+        setupOverflowMenu()
 
-    /**
-     * Fungsi ini mengatur semua listener klik untuk view di halaman utama.
-     */
-    private fun setupClickListeners() {
-        // Listener untuk menu titik tiga (overflow menu)
-        binding.ivMoreOptions.setOnClickListener {
-            showOverflowMenu(it)
+        // buka JadwalActivity ketika kartu/jadwal dikeme
+        binding.imgJadwalPelaksanaan.setOnClickListener {
+            startActivity(android.content.Intent(this, JadwalActivity::class.java))
         }
 
-        // Listener untuk Card Jadwal Pemeriksaan
-        binding.cardJadwalpemeriksaan.setOnClickListener {
-            startActivity(Intent(this, JadwalActivity::class.java))
-        }
-
-        // --- Listener untuk Artikel ---
-        binding.cardArtikelMpasi.setOnClickListener {
-            openUrl("https://www.rspondokindah.co.id/id/news/menyiapkan-asupan-pertama-untuk-si-kecil")
-        }
-
-        binding.cardArtikelImunisasi.setOnClickListener {
-            openUrl("https://primayahospital.com/layanan/imunisasi-anak/")
-        }
-
-        binding.cardArtikelTumbuh.setOnClickListener {
-            openUrl("https://rspcl.ihc.id/artikel-detail-602-Tumbuh-Kembang-Anak-dan-Tahapan-Dari-Bayi-Hingga-Balita-.html")
-        }
-    }
-
-    /**
-     * Fungsi pembantu untuk membuka URL di browser.
-     * Menggunakan try-catch untuk keamanan jika tidak ada browser.
-     */
-    private fun openUrl(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        // make the whole CardView clickable (safer if user taps outside the icon)
         try {
-            startActivity(intent)
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(this, "Tidak ada browser terpasang untuk membuka link.", Toast.LENGTH_LONG).show()
-        }
-    }
-
-    /**
-     * Fungsi untuk menampilkan menu popup (Bantuan, Hubungi Kami, Logout).
-     */
-    private fun showOverflowMenu(view: android.view.View) {
-        val popupMenu = PopupMenu(this, view)
-        popupMenu.menuInflater.inflate(R.menu.overflow_menu, popupMenu.menu)
-
-        popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
-            when (menuItem.itemId) {
-                R.id.menu_bantuan -> {
-                    startActivity(Intent(this, BantuanActivity::class.java))
-                    true
-                }
-                R.id.menu_hubungi_kami -> {
-                    // TODO: Ganti JadwalActivity dengan HubungiKamiActivity jika sudah Anda buat
-                    startActivity(Intent(this, JadwalActivity::class.java))
-                    true
-                }
-                R.id.menu_logout -> {
-                    // TODO: Ganti MainActivity dengan LoginActivity jika sudah Anda buat
-                    startActivity(Intent(this, MainActivity::class.java))
-                    true
-                }
-                else -> false
+            binding.cardJadwalpemeriksaan.setOnClickListener {
+                startActivity(android.content.Intent(this, JadwalActivity::class.java))
+            }
+        } catch (e: Exception) {
+            // fallback: find by id if view binding doesn't expose the card (older generated name)
+            val card = findViewById<android.view.View>(R.id.card_jadwalpemeriksaan)
+            card?.setOnClickListener {
+                startActivity(android.content.Intent(this, JadwalActivity::class.java))
             }
         }
-        popupMenu.show()
+        binding.cardArtikelMpasi.setOnClickListener {
+            val url = "https://www.rspondokindah.co.id/id/news/menyiapkan-asupan-pertama-untuk-si-kecil"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+    }
+
+    // Fungsi baru untuk menangani menu titik tiga (menu more)
+    private fun setupOverflowMenu() {
+
+        binding.ivMoreOptions.setOnClickListener { view ->
+            // 1. Buat instance PopupMenu
+            val popupMenu = PopupMenu(this, view)
+
+            // 2. Inflate (tampilkan) menu dari file XML
+            popupMenu.menuInflater.inflate(R.menu.overflow_menu, popupMenu.menu)
+
+            // 3. Tambahkan listener untuk menangani klik pada setiap item menu
+            popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_bantuan -> {
+                        // Membuat Intent untuk membuka BantuanActivity
+                        val intent = Intent(this, BantuanActivity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.menu_hubungi_kami -> {
+                        // Aksi saat item "Hubungi Kami" diklik
+                        val intent = Intent(this, JadwalActivity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+                    R.id.menu_logout -> {
+                        // Aksi saat item "Logout" diklik
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            // 4. Tampilkan PopupMenu
+            popupMenu.show()
+        }
     }
 }
 

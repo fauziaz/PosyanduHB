@@ -30,5 +30,7 @@ class JawabanBantuanActivity : AppCompatActivity() {
         binding.ivBackButton.setOnClickListener {
             finish()
         }
+        // wire bottom nav/fab
+        setupBottomNavigation(this)
     }
 }

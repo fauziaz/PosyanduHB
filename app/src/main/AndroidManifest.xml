@@ -36,6 +36,22 @@
             android:exported="false" />
 
         <activity
+            android:name=".HubungiKamiActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ReservasiActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ReservasiBerhasilActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
 

@@ -87,20 +87,7 @@ class HubungiKamiActivity : AppCompatActivity() {
             }
         }
 
-        // Bottom nav handling (open profile or home)
-        binding.bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_profile -> {
-                    startActivity(Intent(this, ProfileActivity::class.java))
-                    true
-                }
-                R.id.nav_reservasi -> {
-                    // placeholder: if you have ReservasiActivity, open it
-                    Toast.makeText(this, "Reservasi (belum diimplementasikan)", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
-        }
+        // Use shared bottom navigation wiring (setupBottomNavigation will attach listeners)
+        setupBottomNavigation(this)
     }
 }
