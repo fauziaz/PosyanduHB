@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // open LoginActivity from landing when user taps Bergabung
+        val btnJoin = findViewById<android.widget.Button>(R.id.btnJoin)
+        btnJoin.setOnClickListener {
+            startActivity(android.content.Intent(this, LoginActivity::class.java))
+        }
     }
 }
