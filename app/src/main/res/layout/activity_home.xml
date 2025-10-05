@@ -318,6 +318,7 @@
                     android:orientation="horizontal">
                     <!-- Artikel 1 -->
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_artikel_mpasi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -330,7 +331,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/card_artikel_mpasi"
+                                android:id="@+id/img_artikel"
                                 android:layout_width="match_parent"
                                 android:layout_height="80dp"
                                 android:scaleType="centerCrop"
@@ -348,6 +349,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_artikel_imunisasi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -378,6 +380,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/card_artikel_Tumbuh"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
