@@ -1,5 +1,6 @@
 package com.example.posyanduhb
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,6 +21,10 @@ class JadwalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityJadwalBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
 
         val jadwalList = listOf(
             DaySchedule(
