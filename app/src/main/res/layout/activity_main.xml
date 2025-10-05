@@ -38,8 +38,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/motto"
-        android:textColor="@color/ungu"
-        android:textSize="16sp"
+        style="@style/TextAppearance.Posyandu.Subtitle"
         app:layout_constraintTop_toBottomOf="@id/headerContainer"
         app:layout_constraintBottom_toTopOf="@id/btnJoin"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,17 +47,15 @@
 
 
     <Button
-        android:id="@+id/btnJoin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/pink"
-        android:padding="14dp"
-        android:text="@string/btn_join"
-        android:textColor="@color/ungu"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="24dp"/>
+    android:id="@+id/btnJoin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Widget.Posyandu.Button"
+    android:padding="16dp"
+    android:text="@string/btn_join"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_margin="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

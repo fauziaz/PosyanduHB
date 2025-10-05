@@ -22,9 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Halo, Selamat Datang\nKembali!"
-            android:textColor="@color/ungu"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            style="@style/TextAppearance.Posyandu.Title"
             android:gravity="center"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="18dp"/>
@@ -33,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nama Pengguna"
-            android:textColor="@color/ungu"
+            style="@style/TextAppearance.Posyandu.Subtitle"
             android:layout_marginTop="6dp"/>
 
         <LinearLayout
@@ -113,10 +111,8 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="18dp"
-            android:backgroundTint="@color/pink"
-            android:text="Login"
-            android:textColor="@color/ungu"
-            android:textStyle="bold"/>
+            style="@style/Widget.Posyandu.Button"
+            android:text="Login"/>
 
     </LinearLayout>
 

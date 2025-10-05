@@ -4,6 +4,11 @@ plugins {
 }
 
 android {
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     namespace = "com.example.posyanduhb"
     compileSdk = 36
 
@@ -32,9 +37,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
-    }
-    viewBinding {
-        enable = true
     }
 }
 

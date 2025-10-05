@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_event"
+    android:padding="12dp"
+    android:layout_marginVertical="4dp">
+
+    <TextView
+        android:id="@+id/tvNamaEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imunisasi"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#000" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:gravity="center_vertical">
+
+        <!-- Ikon Jam -->
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_jam"
+            android:tint="#A30855"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/tvWaktu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:00 – 9:30"
+            android:textColor="#A30855"
+            android:textSize="13sp" />
+
+        <!-- Spacer kecil -->
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="match_parent" />
+
+        <!-- Ikon Lokasi -->
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_lokasi"
+            android:tint="#A30855"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/tvLokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zoom"
+            android:textColor="#A30855"
+            android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>
