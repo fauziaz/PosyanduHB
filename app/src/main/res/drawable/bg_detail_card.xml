@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <solid android:color="#FFFFFF" />
@@ -5,3 +6,19 @@
     <corners android:radius="12dp"/>
     <padding android:left="12dp" android:top="12dp" android:right="12dp" android:bottom="12dp"/>
 </shape>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Warna Background Putih -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Border/Stroke Kotak -->
+    <stroke
+        android:width="1.5dp"
+        android:color="#E0E0E0" />
+
+    <!-- Sudut Melengkung - Semua sudut -->
+    <corners android:radius="20dp" />
+
+</shape>
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1

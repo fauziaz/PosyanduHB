@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+<<<<<<< HEAD
         <!-- Bagian Header -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -68,10 +69,53 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Konten Utama yang bisa di-scroll -->
+=======
+        <!-- Bagian Header Atas -->
+        <TextView
+            android:id="@+id/tv_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="Hallo,\nCeline"
+            android:textColor="#6B6B6B"
+            android:textSize="32sp"
+            android:lineSpacingExtra="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/poppins_bold" />
+
+        <ImageView
+            android:id="@+id/ic_posyandu"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_posyandu"
+            android:contentDescription="Logo Posyandu"
+            app:layout_constraintBottom_toBottomOf="@id/tv_greeting"
+            app:layout_constraintEnd_toStartOf="@id/iv_more_options"
+            app:layout_constraintTop_toTopOf="@id/tv_greeting" />
+
+        <ImageView
+            android:id="@+id/iv_more_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_menu_more"
+            android:contentDescription="Menu"
+            app:layout_constraintBottom_toBottomOf="@id/ic_posyandu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ic_posyandu"
+            app:tint="#5C5C5C" />
+
+        <!-- Konten Utama dengan Background Putih Rounded Top -->
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
+<<<<<<< HEAD
             android:background="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,11 +124,27 @@
             android:clipToPadding="false"
             android:padding="20dp"
             android:paddingBottom="80dp">
+=======
+            android:background="@drawable/bg_white_rounded_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_greeting"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp">
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:orientation="vertical">
+=======
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingTop="24dp">
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
 
                 <!-- Pilih Layanan -->
                 <TextView
@@ -202,7 +262,11 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="16dp" />
 
+<<<<<<< HEAD
                 <!-- Tombol -->
+=======
+                <!-- Tombol Konfirmasi -->
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
                 <Button
                     android:id="@+id/btnKonfirmasi"
                     android:layout_width="match_parent"
@@ -217,7 +281,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+<<<<<<< HEAD
     <!-- Bottom Navigation -->
+=======
+    <!-- BOTTOM NAVIGATION BAR -->
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
@@ -231,6 +299,10 @@
         app:fabCradleVerticalOffset="10dp"
         app:hideOnScroll="true" />
 
+<<<<<<< HEAD
+=======
+    <!-- FLOATING ACTION BUTTON -->
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_beranda"
         android:layout_width="wrap_content"
@@ -241,11 +313,16 @@
         app:maxImageSize="30dp"
         app:tint="@android:color/white" />
 
+<<<<<<< HEAD
+=======
+    <!-- BOTTOM NAVIGATION VIEW -->
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+<<<<<<< HEAD
         app:menu="@menu/bottom_nav_menu"
         android:background="@android:color/transparent"
         app:itemIconTint="@color/bottom_nav_color_selector"
@@ -253,3 +330,12 @@
         app:labelVisibilityMode="labeled"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+=======
+        android:background="@android:color/transparent"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="labeled" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+>>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1

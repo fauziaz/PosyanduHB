@@ -20,15 +20,8 @@ class ReservasiActivity : AppCompatActivity() {
         val tvNomorAntrian = findViewById<TextView>(R.id.tvNomorAntrian)
         val btnKonfirmasi = findViewById<Button>(R.id.btnKonfirmasi)
 
-        // Isi pilihan layanan
-        val layananOptions = arrayOf("Imunisasi Balita", "Pemeriksaan Ibu Hamil", "Pemeriksaan Lansia")
-        spinnerLayanan.adapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, layananOptions)
-
-        // Isi pilihan jam
-        val jamOptions = arrayOf("08.00 - 09.00", "09.00 - 10.00", "10.00 - 11.00")
-        spinnerJam.adapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, jamOptions)
+        // Setup Spinner dengan custom layout
+        setupSpinners(spinnerLayanan, spinnerJam)
 
         // Date picker untuk tanggal
         etTanggal.setOnClickListener {
@@ -56,6 +49,9 @@ class ReservasiActivity : AppCompatActivity() {
                 etNamaBalita.error = "Nama balita tidak boleh kosong"
                 Toast.makeText(this, "Silakan isi nama balita terlebih dahulu", Toast.LENGTH_SHORT)
                     .show()
+            } else if (tanggal.isEmpty()) {
+                Toast.makeText(this, "Silakan pilih tanggal terlebih dahulu", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 // tampilkan nomor antrian
                 tvNomorAntrian.text = nomorAntrian
@@ -77,5 +73,29 @@ class ReservasiActivity : AppCompatActivity() {
         }
         // wire bottom nav/fab
         setupBottomNavigation(this)
+    }
+
+    private fun setupSpinners(spinnerLayanan: Spinner, spinnerJam: Spinner) {
+        // Isi pilihan layanan
+        val layananOptions = arrayOf(
+            "Imunisasi Balita",
+            "Pemeriksaan Ibu Hamil",
+            "Pemeriksaan Lansia",
+            "Konsultasi Gizi"
+        )
+        val layananAdapter = ArrayAdapter(this, R.layout.spinner_item, layananOptions)
+        layananAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        spinnerLayanan.adapter = layananAdapter
+
+        // Isi pilihan jam
+        val jamOptions = arrayOf(
+            "08.00 - 09.00",
+            "09.00 - 10.00",
+            "10.00 - 11.00",
+            "11.00 - 12.00"
+        )
+        val jamAdapter = ArrayAdapter(this, R.layout.spinner_item, jamOptions)
+        jamAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        spinnerJam.adapter = jamAdapter
     }
 }
