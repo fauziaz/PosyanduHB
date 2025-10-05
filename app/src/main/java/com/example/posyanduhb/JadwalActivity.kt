@@ -45,6 +45,14 @@ class JadwalActivity : AppCompatActivity() {
         // Set up RecyclerView
         binding.recyclerJadwal.layoutManager = LinearLayoutManager(this)
         binding.recyclerJadwal.adapter = JadwalAdapter(jadwalList)
+
+        // back button support: finish this activity when back icon is clicked
+        try {
+            binding.btnBack.setOnClickListener { finish() }
+        } catch (e: Exception) {
+            val back = findViewById<android.view.View>(R.id.btnBack)
+            back?.setOnClickListener { finish() }
+        }
     }
 }
 

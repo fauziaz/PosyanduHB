@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="160dp"
+    android:viewportWidth="240"
+    android:viewportHeight="160">
+    <!-- background -->
+    <path
+        android:fillColor="#F1EAF0"
+        android:pathData="M0,0h240v160h-240z"/>
+    <!-- map tiles: simple rectangles -->
+    <path
+        android:fillColor="#E6DDE6"
+        android:pathData="M8,8h110v60h-110zM122,8h110v60h-110zM8,74h110v60h-110zM122,74h110v60h-110z"/>
+    <!-- marker circle -->
+    <path
+        android:fillColor="#BFA1B8"
+        android:pathData="M160,48c0,8.3-6.7,15-15,15s-15-6.7-15-15 6.7-15 15-15 15,6.7 15,15z"/>
+</vector>

@@ -51,6 +51,13 @@
         <activity
             android:name=".JadwalActivity"
             android:exported="true" />
+        
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HubungiKamiActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
