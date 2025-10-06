@@ -8,9 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class ReservasiActivity : AppCompatActivity() {
+    
+    private lateinit var userPreferences: UserPreferences
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reservasi)
+
+        // Initialize UserPreferences
+        userPreferences = UserPreferences.getInstance(this)
+        
+        // Update greeting dengan username
+        updateUserGreeting()
 
         // Deklarasi View
         val spinnerLayanan = findViewById<Spinner>(R.id.spinnerLayanan)
@@ -52,6 +61,12 @@ class ReservasiActivity : AppCompatActivity() {
             } else if (tanggal.isEmpty()) {
                 Toast.makeText(this, "Silakan pilih tanggal terlebih dahulu", Toast.LENGTH_SHORT)
                     .show()
+            } else if (layanan == "Pilih Layanan") {
+                Toast.makeText(this, "Silakan pilih layanan terlebih dahulu", Toast.LENGTH_SHORT)
+                    .show()
+            } else if (jam == "Pilih Jam Antrian") {
+                Toast.makeText(this, "Silakan pilih jam antrian terlebih dahulu", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 // tampilkan nomor antrian
                 tvNomorAntrian.text = nomorAntrian
@@ -70,26 +85,39 @@ class ReservasiActivity : AppCompatActivity() {
     }
 
     private fun setupSpinners(spinnerLayanan: Spinner, spinnerJam: Spinner) {
-        // Isi pilihan layanan
+        // Isi pilihan layanan dengan default prompt
         val layananOptions = arrayOf(
+            "Pilih Layanan",
             "Imunisasi Balita",
             "Pemeriksaan Ibu Hamil",
             "Pemeriksaan Lansia",
             "Konsultasi Gizi"
         )
-        val layananAdapter = ArrayAdapter(this, R.layout.spinner_item, layananOptions)
-        layananAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        val layananAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, layananOptions)
+        layananAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerLayanan.adapter = layananAdapter
 
-        // Isi pilihan jam
+        // Isi pilihan jam dengan default prompt
         val jamOptions = arrayOf(
+            "Pilih Jam Antrian",
             "08.00 - 09.00",
             "09.00 - 10.00",
             "10.00 - 11.00",
             "11.00 - 12.00"
         )
-        val jamAdapter = ArrayAdapter(this, R.layout.spinner_item, jamOptions)
-        jamAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        val jamAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, jamOptions)
+        jamAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerJam.adapter = jamAdapter
     }
- }
+
+    /**
+     * Update greeting dengan username dari SharedPreferences
+     */
+    private fun updateUserGreeting() {
+        val username = userPreferences.getUsername()
+        if (username.isNotEmpty()) {
+            val tvGreeting = findViewById<TextView>(R.id.tv_greeting)
+            tvGreeting?.text = "Hallo,\n$username"
+        }
+    }
+}

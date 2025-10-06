@@ -20,7 +20,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:text="Hallo,\nCeline"
-            android:textColor="#6B6B6B"
+            android:textColor="#716A8D"
             android:textSize="32sp"
             android:lineSpacingExtra="4dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +89,7 @@
                     android:background="@drawable/bg_input_box"
                     android:paddingHorizontal="12dp"
                     android:spinnerMode="dropdown"
+                    android:prompt="@string/prompt_layanan"
                     android:layout_marginBottom="14dp" />
 
                 <!-- Pilih Tanggal -->
@@ -144,6 +145,8 @@
                     android:layout_height="50dp"
                     android:background="@drawable/bg_input_box"
                     android:paddingHorizontal="12dp"
+                    android:spinnerMode="dropdown"
+                    android:prompt="@string/prompt_jam"
                     android:layout_marginBottom="14dp" />
 
                 <!-- Nama Balita -->

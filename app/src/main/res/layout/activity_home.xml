@@ -141,7 +141,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:fontFamily="@font/poppins_regular"
-                                android:text="Reservasi\nOnline"
+                                android:text="Riwayat\nPemeriksaan"
                                 android:textColor="#716A8D" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>

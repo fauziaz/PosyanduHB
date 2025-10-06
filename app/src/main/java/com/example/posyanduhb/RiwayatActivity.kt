@@ -1,9 +1,12 @@
 package com.example.posyanduhb
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.posyanduhb.databinding.ActivityRiwayatBinding
@@ -69,12 +72,17 @@ class RiwayatActivity : AppCompatActivity() {
         // Update username dari SharedPreferences
         val username = userPreferences.getUsername()
         if (username.isNotEmpty()) {
-            binding.tvUsernameRiwayat.text = username
+            binding.tvGreeting.text = "Hallo,\n$username"
         }
         
         // Tombol Back
         binding.btnBack.setOnClickListener {
             finish()
+        }
+
+        // Menu overflow (titik 3)
+        binding.ivMoreOptions.setOnClickListener {
+            showOverflowMenu(it)
         }
 
         // Data dummy dengan icon yang pasti ada
@@ -105,5 +113,34 @@ class RiwayatActivity : AppCompatActivity() {
     private fun setupRecyclerView(recyclerView: RecyclerView, data: List<Riwayat>) {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RiwayatAdapter(data)
+    }
+
+    /**
+     * Fungsi untuk menampilkan menu popup (Bantuan, Hubungi Kami, Logout).
+     */
+    private fun showOverflowMenu(view: android.view.View) {
+        val popupMenu = PopupMenu(this, view)
+        popupMenu.menuInflater.inflate(R.menu.overflow_menu, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { menuItem: MenuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_bantuan -> {
+                    startActivity(Intent(this, BantuanActivity::class.java))
+                    true
+                }
+                R.id.menu_hubungi_kami -> {
+                    startActivity(Intent(this, HubungiKamiActivity::class.java))
+                    true
+                }
+                R.id.menu_logout -> {
+                    // Logout - kembali ke MainActivity (welcome screen)
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish() // tutup RiwayatActivity agar user tidak bisa back ke sini
+                    true
+                }
+                else -> false
+            }
+        }
+        popupMenu.show()
     }
 }

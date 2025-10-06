@@ -6,5 +6,8 @@
     android:textAppearance="?android:attr/textAppearanceListItemSmall"
     android:gravity="center_vertical"
     android:padding="12dp"
-    android:textColor="#716A8D"
-    android:textSize="14sp" />
+    android:textColor="#333333"
+    android:textSize="14sp"
+    android:minHeight="48dp"
+    android:singleLine="true"
+    android:ellipsize="end" />

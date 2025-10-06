@@ -31,19 +31,14 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_username_berhasil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hallo"
-                    android:textColor="#6B6B6B"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Celine"
-                    android:textColor="#2F2F2F"
-                    android:textStyle="bold"
-                    android:textSize="22sp" />
+                    android:text="Hallo,\nCeline"
+                    android:textColor="#716A8D"
+                    android:textSize="32sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:lineSpacingExtra="4dp" />
             </LinearLayout>
 
             <!-- Logo -->
@@ -121,6 +116,7 @@
                             android:layout_marginEnd="8dp" />
 
                         <TextView
+                            android:id="@+id/tv_nomor_antrian_detail"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
@@ -153,6 +149,7 @@
                             android:layout_marginEnd="8dp" />
 
                         <TextView
+                            android:id="@+id/tv_nama_balita_detail"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
@@ -185,6 +182,7 @@
                             android:layout_marginEnd="8dp" />
 
                         <TextView
+                            android:id="@+id/tv_layanan_detail"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
@@ -216,6 +214,7 @@
                             android:layout_marginEnd="8dp" />
 
                         <TextView
+                            android:id="@+id/tv_tanggal_jam_detail"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"

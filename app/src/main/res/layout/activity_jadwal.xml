@@ -22,6 +22,7 @@
             android:layout_marginTop="32dp"
             style="@style/TextAppearance.Posyandu.Title"
             android:text="Hallo,\nCeline"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
