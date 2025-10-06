@@ -18,7 +18,7 @@ class ReservasiBerhasilActivity : AppCompatActivity() {
         }
 
         btnBeranda.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }

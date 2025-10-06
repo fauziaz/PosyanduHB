@@ -66,6 +66,7 @@ class ReservasiActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        setupBottomNavigation(this)
     }
 
     private fun setupSpinners(spinnerLayanan: Spinner, spinnerJam: Spinner) {
@@ -91,4 +92,4 @@ class ReservasiActivity : AppCompatActivity() {
         jamAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         spinnerJam.adapter = jamAdapter
     }
-}
+ }

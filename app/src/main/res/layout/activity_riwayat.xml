@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".RiwayatActivity">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:background="#F0D8E4"
+        android:gravity="center_vertical">
+
+        <!-- Tombol Back -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Back" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_greeting_riwayat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hallo"
+                android:textColor="#6B6B6B"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_username_riwayat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Celine"
+                android:textColor="#2F2F2F"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_posyandu"
+            android:contentDescription="Logo Posyandu" />
+    </LinearLayout>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Riwayat Reservasi"
+                android:textColor="#3A2D2D"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Imunisasi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Imunisasi"
+                android:textColor="#4A3F4E"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImunisasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Penimbangan -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penimbangan"
+                android:textColor="#4A3F4E"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPenimbangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Pengukuran -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengukuran"
+                android:textColor="#4A3F4E"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPengukuran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

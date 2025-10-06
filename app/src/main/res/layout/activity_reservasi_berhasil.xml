@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -222,7 +223,6 @@
                             android:textColor="#4A3F4E"
                             android:textSize="14sp" />
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <!-- Tombol Kembali -->
@@ -233,85 +233,24 @@
                     android:text="Kembali"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    android:backgroundTint="#B89DB6"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/bg_button_primary" />
+                    android:background="@drawable/bg_button_primary"
+                    android:layout_marginBottom="10dp" />
 
                 <!-- Tombol Beranda -->
                 <Button
                     android:id="@+id/btnBeranda"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:text="Kembali ke Beranda"
                     android:textColor="#FFFFFF"
                     android:background="@drawable/bg_button_primary"
-                    android:layout_marginTop="8dp" />
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Layanan"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="8dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="Imunisasi Balita"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <!-- Tanggal & Jam -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Tanggal &amp; Jam"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=":"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp"
-                        android:layout_marginEnd="8dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="Senin, 15 Oktober\n08.00 - 09.00"
-                        android:textColor="#4A3F4E"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-=======
-                    android:layout_height="50dp"
-                    android:text="Beranda"
-                    android:textColor="#B89DB6"
-                    android:background="@drawable/bg_button_outline"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp" />
->>>>>>> 0776faf4f50068f34fe38836af200b8a5f213ae1
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 
-    <!-- BOTTOM NAVIGATION BAR -->
+    <!-- BOTTOM APP BAR -->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"

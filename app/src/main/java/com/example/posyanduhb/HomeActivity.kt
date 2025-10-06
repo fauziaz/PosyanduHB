@@ -13,14 +13,32 @@ import com.example.posyanduhb.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var userPreferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize UserPreferences
+        userPreferences = UserPreferences.getInstance(this)
+        
+        // Update greeting dengan username
+        updateUserGreeting()
+
         // Memanggil satu fungsi utama untuk mengatur semua listener klik
         setupClickListeners()
+    }
+
+    /**
+     * Update greeting dengan username dari SharedPreferences
+     */
+    private fun updateUserGreeting() {
+        val username = userPreferences.getUsername()
+        if (username.isNotEmpty()) {
+            // Update greeting di home menggunakan binding
+            binding.tvGreeting.text = "Hallo,\n$username"
+        }
     }
 
     /**
@@ -32,9 +50,21 @@ class HomeActivity : AppCompatActivity() {
             showOverflowMenu(it)
         }
 
-        // Listener untuk Card Jadwal Pemeriksaan
+        // --- Listener untuk Card Menu Utama ---
+        
+        // Card Jadwal Pemeriksaan -> ke JadwalActivity
         binding.cardJadwalpemeriksaan.setOnClickListener {
             startActivity(Intent(this, JadwalActivity::class.java))
+        }
+
+        // Card Reservasi Online -> ke RiwayatActivity (history reservasi)
+        binding.cardReservasionline.setOnClickListener {
+            startActivity(Intent(this, RiwayatActivity::class.java))
+        }
+
+        // Card Profil Akun -> ke ProfileActivity
+        binding.cardProfilakun.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         // --- Listener untuk Artikel ---
@@ -49,6 +79,9 @@ class HomeActivity : AppCompatActivity() {
         binding.cardArtikelTumbuh.setOnClickListener {
             openUrl("https://rspcl.ihc.id/artikel-detail-602-Tumbuh-Kembang-Anak-dan-Tahapan-Dari-Bayi-Hingga-Balita-.html")
         }
+
+        // --- Setup Bottom Navigation ---
+        setupBottomNavigation(this)
     }
 
     /**
@@ -78,13 +111,13 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_hubungi_kami -> {
-                    // TODO: Ganti JadwalActivity dengan HubungiKamiActivity jika sudah Anda buat
-                    startActivity(Intent(this, JadwalActivity::class.java))
+                    startActivity(Intent(this, HubungiKamiActivity::class.java))
                     true
                 }
                 R.id.menu_logout -> {
-                    // TODO: Ganti MainActivity dengan LoginActivity jika sudah Anda buat
+                    // Logout - kembali ke MainActivity (welcome screen)
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish() // tutup HomeActivity agar user tidak bisa back ke sini
                     true
                 }
                 else -> false

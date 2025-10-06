@@ -61,19 +61,15 @@
 
         <activity
             android:name=".BantuanActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
 
         <activity
             android:name=".JadwalActivity"
             android:exported="true" />
         
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".HubungiKamiActivity"
-            android:exported="true" />
+            android:name=".RiwayatActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

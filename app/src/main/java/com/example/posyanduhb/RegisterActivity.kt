@@ -10,9 +10,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class RegisterActivity : AppCompatActivity() {
+    
+    private lateinit var userPreferences: UserPreferences
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        // Initialize UserPreferences
+        userPreferences = UserPreferences.getInstance(this)
 
         val etUsername = findViewById<EditText>(R.id.etRegUsername)
         val etEmail = findViewById<EditText>(R.id.etRegEmail)
@@ -54,6 +60,14 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, "Setujui kebijakan untuk melanjutkan", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
+            // Simpan data user ke SharedPreferences
+            userPreferences.saveUserProfile(
+                username = u,
+                email = e,
+                dob = d,
+                phone = "" // phone kosong saat register, bisa diisi di profil nanti
+            )
 
             // For demo, after sign up go to Login
             Toast.makeText(this, "Akun dibuat. Silakan login.", Toast.LENGTH_SHORT).show()
